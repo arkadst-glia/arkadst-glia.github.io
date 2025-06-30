@@ -3,10 +3,385 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Test Page</title>
     <script async src="https://api.beta.glia.com/salemove_integration.js"></script>
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header, footer {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        section {
+            background-color: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form {
+            background-color: #e9e9e9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        input[type="text"], input[type="email"], input[type="password"], textarea, select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .button:hover {
+            background-color: #218838;
+        }
+        ul, ol {
+            margin-bottom: 20px;
+        }
+        details {
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+        }
+        progress {
+            width: 100%;
+            margin-top: 10px;
+        }
+        blockquote {
+            background-color: #f9f9f9;
+            border-left: 5px solid #ccc;
+            margin: 1.5em 10px;
+            padding: 0.5em 10px;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #eee;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        legend {
+            font-weight: bold;
+            padding: 0 5px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Test website</h1>
+
+    <header>
+        <h1>Welcome to the CoBrowse Test Page</h1>
+        <p>A collection of various HTML elements for testing purposes.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#text-elements">Text Elements</a></li>
+            <li><a href="#lists">Lists</a></li>
+            <li><a href="#tables">Tables</a></li>
+            <li><a href="#forms">Forms</a></li>
+            <li><a href="#media">Media</a></li>
+            <li><a href="#interactive">Interactive & Other</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="text-elements">
+            <h2>Text Elements</h2>
+
+            <p>This is a standard paragraph of text. It contains <strong>strong text</strong>, <em>emphasized text</em>, and <mark>marked text</mark>. You can also find <small>small text</small> and text that is <u>underlined</u>.</p>
+
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <h5>Heading 5</h5>
+            <h6>Heading 6</h6>
+
+            <p>Here's a text with a line break:<br>This is the second line.</p>
+
+            <p>And a horizontal rule below:</p>
+            <hr>
+
+            <blockquote>
+                <p>"The only way to do great work is to love what you do."</p>
+                <footer>— Steve Jobs</footer>
+            </blockquote>
+
+            <p>This is a short piece of <code>code</code>.</p>
+            <pre><code>
+function greet(name) {
+    console.log("Hello, " + name + "!");
+}
+greet("World");
+            </code></pre>
+            <p>This text contains a <del>deleted part</del> and an <ins>inserted part</ins>.</p>
+            <p>This is a subscript: H<sub>2</sub>O. This is a superscript: X<sup>2</sup>.</p>
+        </section>
+
+        <section id="lists">
+            <h2>Lists</h2>
+
+            <h3>Unordered List</h3>
+            <ul>
+                <li>Item One</li>
+                <li>Item Two
+                    <ul>
+                        <li>Nested Item A</li>
+                        <li>Nested Item B</li>
+                    </ul>
+                </li>
+                <li>Item Three</li>
+            </ul>
+
+            <h3>Ordered List</h3>
+            <ol>
+                <li>First Item</li>
+                <li>Second Item</li>
+                <li>Third Item</li>
+            </ol>
+
+            <h3>Description List</h3>
+            <dl>
+                <dt>HTML</dt>
+                <dd>HyperText Markup Language</dd>
+                <dt>CSS</dt>
+                <dd>Cascading Style Sheets</dd>
+            </dl>
+        </section>
+
+        <section id="tables">
+            <h2>Tables</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Header 1</th>
+                        <th>Header 2</th>
+                        <th>Header 3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Data 1A</td>
+                        <td>Data 1B</td>
+                        <td>Data 1C</td>
+                    </tr>
+                    <tr>
+                        <td>Data 2A</td>
+                        <td>Data 2B</td>
+                        <td>Data 2C</td>
+                    </tr>
+                    <tr>
+                        <td>Data 3A</td>
+                        <td>Data 3B</td>
+                        <td>Data 3C</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Table Footer</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section id="forms">
+            <h2>Forms</h2>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required><br>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email"><br>
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password"><br>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" cols="50"></textarea><br>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Choose Options</legend>
+                    <label for="gender">Gender:</label>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label><br>
+
+                    <label>Interests:</label>
+                    <input type="checkbox" id="coding" name="interest" value="coding">
+                    <label for="coding">Coding</label>
+                    <input type="checkbox" id="reading" name="interest" value="reading">
+                    <label for="reading">Reading</label>
+                    <input type="checkbox" id="sports" name="interest" value="sports">
+                    <label for="sports">Sports</label><br>
+
+                    <label for="country">Country:</label>
+                    <select id="country" name="country">
+                        <option value="usa">United States</option>
+                        <option value="can">Canada</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="aus">Australia</option>
+                    </select><br>
+
+                    <label for="quantity">Quantity (between 1 and 5):</label>
+                    <input type="number" id="quantity" name="quantity" min="1" max="5"><br>
+
+                    <label for="range">Range (0-100):</label>
+                    <input type="range" id="range" name="range" min="0" max="100" value="50"><br>
+
+                    <label for="color">Favorite Color:</label>
+                    <input type="color" id="color" name="color"><br>
+
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob"><br>
+
+                    <label for="appt-time">Appointment Time:</label>
+                    <input type="time" id="appt-time" name="appt-time"><br>
+
+                    <label for="url">Website:</label>
+                    <input type="url" id="url" name="url" placeholder="https://example.com"><br>
+                </fieldset>
+
+                <input type="submit" value="Submit Form">
+                <button type="reset">Reset Form</button>
+            </form>
+        </section>
+
+        <section id="media">
+            <h2>Media Elements</h2>
+
+            <h3>Image</h3>
+            <img src="https://via.placeholder.com/300x200?text=Placeholder+Image" alt="A placeholder image" width="300" height="200">
+            <figcaption>A simple placeholder image.</figcaption>
+
+            <h3>Audio</h3>
+            <audio controls>
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+
+            <h3>Video</h3>
+            <video width="320" height="240" controls>
+                <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <h3>iFrame</h3>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+            <p>An embedded YouTube video (Rick Astley).</p>
+        </section>
+
+        <section id="interactive">
+            <h2>Interactive & Other Elements</h2>
+
+            <h3>Buttons & Links</h3>
+            <a href="#" class="button">Regular Link Button</a>
+            <button type="button" onclick="alert('Button clicked!')">Click Me Button</button>
+            <br><br>
+
+            <h3>Details/Summary (Accordion)</h3>
+            <details>
+                <summary>Click to reveal more information</summary>
+                <p>This is the hidden content that appears when you click the summary.</p>
+                <p>It can contain paragraphs, lists, or any other HTML elements.</p>
+            </details>
+
+            <h3>Progress Bar</h3>
+            <label for="file">Downloading progress:</label>
+            <progress id="file" value="70" max="100"> 70% </progress>
+
+            <h3>Meter</h3>
+            <label for="disk_c">Disk usage C:</label>
+            <meter id="disk_c" value="0.6" low="0.4" high="0.8" optimum="0.9">60%</meter><br>
+            <label for="disk_d">Disk usage D:</label>
+            <meter id="disk_d" value="0.2" low="0.4" high="0.8" optimum="0.9">20%</meter>
+
+            <h3>Data List (Input with suggestions)</h3>
+            <label for="browser">Choose your browser from the list:</label>
+            <input list="browsers" id="browser" name="browser">
+            <datalist id="browsers">
+                <option value="Edge">
+                <option value="Firefox">
+                <option value="Chrome">
+                <option value="Opera">
+                <option value="Safari">
+            </datalist>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Test Page. All rights reserved.</p>
+        <address>
+            Contact: <a href="mailto:test@example.com">test@example.com</a>
+        </address>
+    </footer>
+
 </body>
 </html>
