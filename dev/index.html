@@ -384,7 +384,33 @@ greet("World");
                 <option value="Safari">
             </datalist>
         </section>
+
+        <section id="circular-value-repro" ng-app="reproApp">
+            <h2>AngularJS Component</h2>
+            <p>
+                The AngularJS component below exposes its live <code>$scope</code> on the DOM
+                node's <code>.value</code>. An AngularJS <code>$scope</code> is a circular
+                object graph (<code>$parent</code> / <code>$$childHead</code> /
+                <code>$$childTail</code>), which exercises co-browsing serialization of
+                framework-backed elements.
+            </p>
+            <quote-widget>Framework-backed quote widget</quote-widget>
+        </section>
     </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        angular.module('reproApp', []).directive('quoteWidget', function () {
+            return {
+                restrict: 'E',
+                link: function (scope, element) {
+                    // Expose the live $scope as the element's `.value`. An AngularJS
+                    // $scope is a circular object graph ($parent <-> $$childTail).
+                    element[0].value = scope;
+                }
+            };
+        });
+    </script>
 
     <footer>
         <p>&copy; 2025 Beta Page.</p>
