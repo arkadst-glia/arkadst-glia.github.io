@@ -2,6 +2,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script type="text/javascript" src="//libs.glia.com/axon.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/libphonenumber-js@1.13.13/bundle/libphonenumber-min.js" integrity="sha384-mDAUQGCKd+OxftkBI4iD92+mtUQEyy25FPW4/T8YLA2QaAqZdtk5cVHjXa7qzYFE" crossorigin="anonymous"></script>
     <script>
       let selectedPhoneNumber = "";
       let displayName = "";
@@ -119,6 +120,7 @@
 
       function launchEmbeddedSignup() {
         console.log('FB Login');
+        const selectedPhone = libphonenumber.parsePhoneNumber(selectedPhoneNumber);
         FB.login(function (response) {}, {
           config_id: "1245717871262727",
           auth_type: "rerequest",
@@ -127,6 +129,13 @@
           extras: {
             setup: {
               solutionID: "1185102923018189",
+              // Pre-fills Meta's phone number screen with the number picked in the dropdown
+              business: {
+                phone: {
+                  code: Number(selectedPhone.countryCallingCode),
+                  number: selectedPhone.nationalNumber,
+                },
+              },
             },
           },
         });
